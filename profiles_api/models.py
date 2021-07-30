@@ -43,10 +43,10 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
     objects = UserProfileManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELD = ['name']
+    REQUIRED_FIELDS = ['name']
 
     def get_full_name(self):
-        """Retrieve full name of user"""
+        """Retrieve full name for user"""
         return self.name
 
     def get_short_name(self):
@@ -54,5 +54,5 @@ class UserProfile(AbstractBaseUser, PermissionsMixin):
         return self.name
 
     def __str__(self):
-        """Return string representation of our user"""
+        """Return string representation of user"""
         return self.email
